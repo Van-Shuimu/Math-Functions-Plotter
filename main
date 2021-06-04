@@ -1,0 +1,33 @@
+import numpy as np
+import matplotlib.pyplot as plt
+import math as m
+
+def fun(x):
+    return m.sin(x)
+
+def fun1(x):
+    return None
+
+ro = 0
+xl = 10
+div = 2
+st = 3
+
+y,ypl,xo,xopl = [],[],[],[]
+xall = np.linspace(-xl,xl,xl*div**st+1)
+for x in xall:
+    xo.append('|')
+    #xo.append(str(x).ljust(5))
+    xopl.append(x)
+    #y.append('|')
+    #y.append(str(round(fun(x),ro)).ljust(5))   
+    ypl.append((fun(x),fun1(x)))
+xo.append('|')
+y.append('|')
+#print(*xo,'\n',*y,'\n','X ',abs(int(float(xo[1]))),'\n','Y ',(abs(int(float(y[1])))+abs(int(float(y[-2]))))//2,sep='')
+#print('X',abs(int(float(xo[1]))))
+#print('Y',(abs(int(float(y[1])))+abs(int(float(y[-2]))))//2)
+plt.plot(xopl,ypl,'-')
+plt.grid('True')
+plt.axis('Equal')
+plt.show()
